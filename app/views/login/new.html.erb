@@ -1,0 +1,26 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<%= form_tag "/login" do %>
+  <p>
+    <% if !session[:identity_username_key].nil? %>
+       <b><%= session[:identity_username_key] %></b>
+    <% else %>
+      <%= label_tag :username %><br>
+      <%= text_field_tag :username %>
+    <% end %>
+  </p>
+
+
+  <% if !session[:identity_display_items].nil? %>
+  <%   session[:identity_display_items].each do |display_item| %>
+  <p>
+  <%=    label_tag display_item['display_name'] %>
+  <%=    display_item['form_element'].html_safe %>
+  </p>
+  <%   end %>
+  <% end %>
+
+  <%= submit_tag "Login" %>
+<% end %>
