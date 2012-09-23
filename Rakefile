@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Banana::Application.load_tasks
+IdentityWarden::Application.load_tasks
