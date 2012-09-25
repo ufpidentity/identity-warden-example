@@ -30,3 +30,5 @@ The credentials and the identity provider are configured in the [config/applicat
 which points the Rails.configuration to the key, the key password, the certificate and the truststore. Then we add our strategy to Warden's list of strategies, and ask Warden to please use our strategy as the default. The code in [app/views/login/new.html.erb](https://github.com/ufpidentity/identity-warden-example/blob/master/app/views/login/new.html.erb) shows how to use the service in your login page.
 
 ## Getting Credentials
+
+The first step in getting your own account is to create a Certificate Signing Request. You can use the [helper application](https://github.com/ufpidentity/csr-generator-ruby) to generate a Certificate Signing Request or, if you are familiar with OpenSSL, you can create your own. In either case, please read the [documentation](https://github.com/ufpidentity/csr-generator-ruby#certificate-signing-request) carefully to ensure you get the Distinguish Name (subject) part of the Certificate Signing Request correct.
