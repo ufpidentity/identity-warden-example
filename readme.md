@@ -1,7 +1,7 @@
 ## Overview
 
 This example is based on the excellent [resource](https://github.com/radar/guides/tree/master/warden) provided by [Radar](https://github.com/radar)
-To build this example, assuming you have a working ruby/RoR environment, do:
+To build this example, assuming you have a working Ruby/RoR environment, do:
 
     bundle install
     rake db:create
