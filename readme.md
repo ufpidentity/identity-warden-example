@@ -32,3 +32,15 @@ which points the Rails.configuration to the key, the key password, the certifica
 ## Getting Credentials
 
 The first step in getting your own account is to create a Certificate Signing Request. You can use the [helper application](https://github.com/ufpidentity/csr-generator-ruby) to generate a Certificate Signing Request or, if you are familiar with OpenSSL, you can create your own. In either case, please read the [documentation](https://github.com/ufpidentity/csr-generator-ruby#certificate-signing-request) carefully to ensure you get the Distinguish Name (subject) part of the Certificate Signing Request correct.
+
+After generating an encrypted private/public key pair, and receiving a certificate, copy all those files into the config directory. You can configure this example as follows:
+
+    config.identity_key = 'config/yourdomain.com.key.pem'
+    config.identity_key_password = File.read('config/yourdomain.com.key')
+    config.identity_certificate = 'config/yourdomain.com.pem'
+    config.identity_truststore = 'config/truststore.pem'
+
+Or you can capture the string returned by [File.read](http://www.ruby-doc.org/core-1.9.3/IO.html#method-c-read) 'config/yourdomain.com.key' and configure the secret key like:
+
+    config.identity_key_password = <secret key string returned by File.read>
+
