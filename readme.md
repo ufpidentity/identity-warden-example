@@ -8,7 +8,7 @@ To build this example, assuming you have a working Ruby/RoR environment, do:
     rake db:migrate
     rails s
 
-which installs the required gems, creates the db, initializes the required tables (user and session), and starts a rails server on http://localhost:3000. 
+which installs the required gems, creates the db, initializes the required tables (user and session), and starts a rails server on http://localhost:3000.
 
 With a browser, go to [http://localhost:3000/login](http://localhost:3000/login) and you are prompted for a username. The credentials supplied with the example are guest credentials. Enter in a username of 'guest' and click Login. If all goes well, you will be prompted for a Password. Enter in 'guest' as the password and you will be redirected to a success page where you can Logout. Very simple example showing how to use the service.
 
@@ -31,7 +31,7 @@ which points the Rails.configuration to the key, the key password, the certifica
 
 ## Getting Credentials
 
-The first step in getting your own account is to create a Certificate Signing Request. You can use the [helper application](https://github.com/ufpidentity/csr-generator-ruby) to generate a Certificate Signing Request or, if you are familiar with OpenSSL, you can create your own. In either case, please read the [documentation](https://github.com/ufpidentity/csr-generator-ruby#certificate-signing-request) carefully to ensure you get the Distinguish Name (subject) part of the Certificate Signing Request correct.
+The first step in getting your own account is to create a Certificate Signing Request. You can use the [helper application](https://github.com/ufpidentity/csr-generator-ruby) to generate a Certificate Signing Request or, if you are familiar with OpenSSL, you can create your own. In either case, please read the [documentation](https://github.com/ufpidentity/csr-generator-ruby#certificate-signing-request) carefully to ensure you get the Distinguished Name (subject) part of the Certificate Signing Request correct.
 
 After generating an encrypted private/public key pair, and receiving a certificate, copy all those files into the config directory. You can configure this example as follows:
 
